@@ -1,5 +1,5 @@
 /** Estrutura: Lista Estattica Linear
- *  Modulo: Incrementado
+ *  Modulo: lista.h
  *  Autor: Michael Thierry 
 */
 #ifndef LISTA_H
@@ -26,6 +26,7 @@ typedef struct lista{
 
 Lista* lista_criar();
 
+/*
 void lista_destruir(Lista *lista);
 
 void lista_tamanho(Lista *lista);
@@ -47,5 +48,5 @@ int lista_remover_meio(Lista *lista);
 int lista_remover_fim(Lista *lista);
 
 int lista_mostrar(Lista *lista);
-
+*/
 #endif
