@@ -8,9 +8,14 @@
 int main(){
 
     Lista *lista;
+    
 
     lista = lista_criar();
-    printf("%p\n", lista);
+
+    lista_tamanho(lista);
+    
+
+    lista_destruir(lista);
 
     return 0;
 }
