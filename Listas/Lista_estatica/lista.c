@@ -123,13 +123,15 @@ int lista_remover_fim(Lista *lista){
     return 1;
 }
 
-int lista_mostrar(Lista *lista)[
+int lista_mostrar(Lista *lista){
     if(lista_vazia(lista)){
         return 0;
     }
     int i = 0;
+    printf("LISTA>");
     while(i < lista->quantidade){
         printf("[%i]", lista->elementos[i].valor);
         i++;
     }
-]
+    printf("\n");
+}

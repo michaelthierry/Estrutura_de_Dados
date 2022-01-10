@@ -4,7 +4,7 @@
 */
 #ifndef LISTA_H
 #define LISTA_H
-#define MAX 32
+#define MAX 3
 
 //DEFININDO O TIPO DE DADOS PARA A LISTA
 typedef struct dado{
