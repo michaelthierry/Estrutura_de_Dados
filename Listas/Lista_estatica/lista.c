@@ -1,7 +1,13 @@
-/** Estrutura: Lista Estattica Linear
- *  Modulo: lista.c
- *  Autor: Michael Thierry 
-*/
+/**
+ * @file lista.c
+ * @author Michael (michaelthierry86@gmail.com)
+ * @brief Implementação das funçoes da lista
+ * @version 0.1
+ * @date 2022-01-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
@@ -134,4 +140,5 @@ int lista_mostrar(Lista *lista){
         i++;
     }
     printf("\n");
+    return 1;
 }

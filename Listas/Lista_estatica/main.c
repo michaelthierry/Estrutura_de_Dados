@@ -1,7 +1,13 @@
-/** Estrutura: Lista Estatica Linear
- *  Modulo: Principal
- *  Autor: Michael Thierry 
-*/
+/**
+ * @file main.c
+ * @author Michael (michaelthierry86@gmail.com)
+ * @brief Modo usuario
+ * @version 0.1
+ * @date 2022-01-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <stdio.h>
 #include "lista.h"
 
