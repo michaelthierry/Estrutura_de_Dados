@@ -43,8 +43,14 @@ typedef struct lista{
 
 Lista* lista_criar();
 void lista_destruir(Lista *lista);
-int lista_tamanho(Lista* lista);
-int lista_cheia(Lista* lista);
-int lista_vazia(Lista* lista);
+
+int lista_tamanho(Lista *lista);
+int lista_cheia(Lista *lista);
+int lista_vazia(Lista *lista);
+int lista_mostrar(Lista *lista);
+
+int lista_inserir_inicio(Lista *lista, Dado elemento);
+int lista_inserir_fim(Lista *lista, Dado elemmento);
+int lista_inserir_meio(Lista *lista, Dado elemento);
 
 #endif
