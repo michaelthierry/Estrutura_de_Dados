@@ -71,6 +71,65 @@ int main(){
                         printf("@> Falha: Ao inserir no inicio\n");
                     }
                     break;
+                case 2:
+                    //Pegando informação
+                    printf("@> Digite o ID:\n");
+                    scanf("%i", &pessoa.id);
+                    //Chama a inserção no inicio
+                    valida = lista_inserir_ordenado(lista, pessoa);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Inserido no Meio\n");
+                    }else{
+                        printf("@> Falha: Ao inserir no Meio\n");
+                    }
+                    break;
+                case 3:
+                    //Pegando informação
+                    printf("@> Digite o ID:\n");
+                    scanf("%i", &pessoa.id);
+                    //Chama a inserção no inicio
+                    valida = lista_inserir_fim(lista, pessoa);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Inserido no Fim\n");
+                    }else{
+                        printf("@> Falha: Ao inserir no Fim\n");
+                    }
+                    break;
+                case 4:
+                    //Chama a remoção do inicio
+                    valida = lista_remover_inicio(lista);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Removido no Inicio\n");
+                    }else{
+                        printf("@> Falha: Ao remover no inicio\n");
+                    }
+                    break;
+                case 5:
+                    //Pegando as informações
+                    printf("@> Digite o ID a ser removido:\n");
+                    scanf("%i", &pessoa.id);
+                    //Chama a remoção do inicio
+                    valida = lista_remover_elemento(lista, pessoa);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Elemento removido\n");
+                    }else{
+                        printf("@> Falha: Ao remover elemento\n");
+                    }
+                    break;
+                case 6:
+                    //Chama a remoção do inicio
+                    valida = lista_remover_fim(lista);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Removido do fim\n");
+                    }else{
+                        printf("@> Falha: Ao remover do fim\n");
+                    }
+                    break;
                 case 7:
                     lista_mostrar(lista);
                     printf("@> Lista Mostrada\n"NONE);
@@ -79,7 +138,7 @@ int main(){
                     printf(BOLD RED "@> Opção Invalida!\n"NONE);
                     break;
             }
-
+            
         }while(opcao != 0);
 
     }else{
