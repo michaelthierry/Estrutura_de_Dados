@@ -40,19 +40,56 @@ typedef struct pessoa{
     char *nome;
 }Pessoa;
 
-//Estrutura da Lista
+//Estrutura da Lista Estatica
 typedef struct lista{
     int quantidade;
     Pessoa elementos[MAX];
 }Lista;
 
-//Criando e destruindo a lista
+/**
+ * @brief Aloca memoria para um ponteiro do tipo lista
+ * 
+ * @return Lista* : o ponteiro será NULL se a lista não for criada
+ */
 Lista* lista_criar();
+
+/**
+ * @brief Desaloca a memoria alocada para a lista
+ * 
+ * @param lista : é um ponteiro do tipo lista
+ */
 void lista_destruir(Lista *lista);
-//Informações da lista
+
+/**
+ * @brief Verifica se a lista esta cheia
+ * 
+ * @param lista : é um ponteiro da lista criada
+ * @return int -1 se a lista não existir
+ */
 int lista_cheia(Lista *lista);
+
+/**
+ * @brief Verifica se a lista esta vazia
+ * 
+ * @param lista : é um ponteiro da lista criada
+ * @return int -1 se a lista não existir
+ */
 int lista_vazia(Lista *lista);
+
+/**
+ * @brief Verifica a quantidade de elementos na lista
+ * 
+ * @param lista : é um ponteiro para o tipo Lista
+ * @return int -1 se a lista não existir
+ */
 int lista_tamanho(Lista *lista);
+
+/**
+ * @brief Mostra no console todos os elementos da lista
+ * 
+ * @param lista : o ponteiro para a lista
+ * @return int -1 se a lista não existir.
+ */
 int lista_mostrar(Lista *lista);
 
 #endif

@@ -20,6 +20,7 @@ Lista* lista_criar(){
     lista = (Lista*) malloc(sizeof(Lista));
     //Verifica se foi alocado
     if(lista != NULL){
+        //Adiciona zero ao campo quantidade
         lista->quantidade = 0;
     }
     //Retorna o ponteiro
@@ -76,5 +77,6 @@ int lista_mostrar(Lista *lista){
             lista->elementos[iterador].nome);
         iterador++;
     }
+    //Retorna 1
     return 1;
 }
