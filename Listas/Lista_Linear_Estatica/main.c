@@ -55,7 +55,7 @@ int main(){
             scanf("%i", &opcao);
             //Avaliando a opcao
             switch(opcao){
-                int valida;
+                int valida, indice, id;
                 case 0:
                     break;
                 case 1:
@@ -133,6 +133,32 @@ int main(){
                 case 7:
                     lista_mostrar(lista);
                     printf("@> Lista Mostrada\n"NONE);
+                    break;
+                case 8:
+                    //Pegando informaçao
+                    printf("@> Digite aposição:\n");
+                    scanf("%i", &indice);
+                    //Chamando a função
+                    valida = lista_buscar_posicao(lista, indice, &pessoa);
+                    if(valida > 0){
+                        printf("@> Suceso: Elemento encontrado\n");
+                        printf("@> Elemento: |%d|\n", pessoa.id);
+                    }else{
+                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                    }
+                    break;
+                case 9:
+                    //Pegando informaçao
+                    printf("@> Digite o id:\n");
+                    scanf("%i", &id);
+                    //Chamando a função
+                    valida = lista_buscar_elemento(lista, id, &pessoa);
+                    if(valida > 0){
+                        printf("@> Suceso: Elemento encontrado\n");
+                        printf("@> Elemento: |%d|\n", pessoa.id);
+                    }else{
+                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                    }
                     break;
                 default:
                     printf(BOLD RED "@> Opção Invalida!\n"NONE);
