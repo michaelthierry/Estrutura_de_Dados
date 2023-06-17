@@ -32,36 +32,48 @@ void lista_destruir(Lista *lista){
 }
 
 int lista_cheia(Lista *lista){
+    //Verifica se a lista existe
     if(lista == NULL){
         return -1;
     }
+    //Verifica se esta cheia
     return (lista->quantidade == MAX);
 }
 
 int lista_vazia(Lista *lista){
+    //Verifica se a lista existe 
     if(lista == NULL){
         return -1;
     }
+    //Verifica se esta vazia
     return (lista->quantidade == 0);
 }
 
 int lista_tamanho(Lista *lista){
+    //Verifica a lista existe 
     if(lista == NULL){
         return -1;
     }
+    //Retorna a quantidade
     return lista->quantidade;
 }
 
 int lista_mostrar(Lista *lista){
+    //Verifica se a lista existe
     if(lista == NULL){
         return -1;
     }
+    //Mostra na tela os elementos
     int iterador = 0;
     printf(BOLD YELLOW "@> Lista\n");
     while(iterador < lista->quantidade){
-        printf("[%i]\n", lista->elementos[iterador].id);
-        printf("[%s]\n", lista->elementos[iterador].nome);
-        printf("----\n");
+        printf(
+            "----\n"
+            "ID:[%i]\n"
+            "Nome:[%s]\n"
+            "----\n",
+            lista->elementos[iterador].id,
+            lista->elementos[iterador].nome);
         iterador++;
     }
     return 1;
