@@ -34,7 +34,7 @@ int main(){
         int opcao;
         do{
             //Mostrando as opções 
-            printf(BOLD BLUE
+            printf(BOLD GREEN
                    "+------------------------------------------+\n"
                    "|               OPERACOES                  |\n"
                    "+------------------------------------------+\n"
@@ -48,7 +48,7 @@ int main(){
                    "|[8] Consulta (por posição)                |\n"
                    "|[9] Consulta (por valor)                  |\n"
                    "|[0] Sair                                  |\n"
-                   "+------------[Insira-sua-opção]----------+\n"
+                   "+------------[Insira-sua-opção]------------+\n"
                    NONE);
 
             //lendo do usuario
@@ -138,7 +138,7 @@ int main(){
                     printf(BOLD RED "@> Opção Invalida!\n"NONE);
                     break;
             }
-            
+
         }while(opcao != 0);
 
     }else{
