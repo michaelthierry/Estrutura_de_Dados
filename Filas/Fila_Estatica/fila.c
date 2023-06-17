@@ -12,3 +12,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fila.h"
+
+Fila* fila_criar(){
+    Fila *fila;
+    fila = (Fila*) malloc(sizeof(Fila));
+    if(fila != NULL){
+        fila->quantidade = 0;
+    }
+    return fila;
+}
+void fila_destruir(Fila *fila){
+    free(fila);
+}

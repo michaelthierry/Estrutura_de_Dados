@@ -16,6 +16,9 @@
 /*Programa Principal*/
 
 int main(){
+    Fila *fila;
+    fila = fila_criar();
+    fila_destruir(fila);
 
     return 0;
 }
