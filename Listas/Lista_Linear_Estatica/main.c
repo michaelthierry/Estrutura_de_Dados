@@ -18,6 +18,7 @@
 int main(){
     //Criando varivel
     Lista *lista;
+    Pessoa pessoa;
     //Mensagem para o usuario
     printf(BOLD GREEN "@> Criando lista\n");
     //Tenta alocar memoria para a lista
@@ -47,14 +48,28 @@ int main(){
                    "|[8] Consulta (por posição)                |\n"
                    "|[9] Consulta (por valor)                  |\n"
                    "|[0] Sair                                  |\n"
-                   "+------------[Inserira-sua-opção]----------+\n"
+                   "+------------[Insira-sua-opção]----------+\n"
                    NONE);
 
             //lendo do usuario
             scanf("%i", &opcao);
             //Avaliando a opcao
             switch(opcao){
+                int valida;
                 case 0:
+                    break;
+                case 1:
+                    //Pegando informação
+                    printf("@> Digite o ID:\n");
+                    scanf("%i", &pessoa.id);
+                    //Chama a inserção no inicio
+                    valida = lista_inserir_inicio(lista, pessoa);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Inserido no Inicio\n");
+                    }else{
+                        printf("@> Falha: Ao inserir no inicio\n");
+                    }
                     break;
                 case 7:
                     lista_mostrar(lista);

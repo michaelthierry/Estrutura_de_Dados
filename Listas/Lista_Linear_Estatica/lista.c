@@ -69,14 +69,64 @@ int lista_mostrar(Lista *lista){
     printf(BOLD YELLOW "@> Lista\n");
     while(iterador < lista->quantidade){
         printf(
-            "----\n"
+            "-------\n"
             "ID:[%i]\n"
-            "Nome:[%s]\n"
-            "----\n",
-            lista->elementos[iterador].id,
-            lista->elementos[iterador].nome);
+            "-------\n",
+            lista->elementos[iterador].id);
         iterador++;
     }
     //Retorna 1
+    return 1;
+}
+
+int lista_inserir_inicio(Lista *lista, Pessoa pessoa){
+    //verificar se a lista esta cheia
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Declara um indice
+    int indice;
+    //Move todos os elementos uma casa para frente
+    for(indice = lista->quantidade - 1; indice >= 0; indice--){
+        lista->elementos[indice + 1] = lista->elementos[indice];
+    }
+    //Adicioan o elemento na primeira posiçao
+    lista->elementos[0] = pessoa;
+    lista->quantidade++;
+    //Retorna sucesso
+    return 1;
+}
+
+int lista_inserir_ordenado(Lista *lista, Pessoa pessoa){
+    //Verifica se esta cheia
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Percore a lista procurando o posição certa
+    int posicao, indice = 0;
+    while((indice < lista->quantidade) && (lista->elementos[indice].id < pessoa.id)){
+        indice++;
+    }
+    //Move todos da posicão encontrada para a direita
+    for(posicao = lista->quantidade -1; posicao >= indice; posicao--){
+        lista->elementos[posicao + 1] = lista->elementos[posicao];
+    }
+    //Insere o elemento na posição e incrementa a quantidade
+    lista->elementos[indice] = pessoa;
+    lista->quantidade++;
+    //Retorna sucesso
+    return 1;
+}
+
+int lista_inserir_fim(Lista *lista, Pessoa pessoa){
+    //Verifica se a lista existe
+    if(lista_cheia(lista)){
+        return -1;
+    }
+    //Adiciona o elemento na ultima posiçao
+    lista->elementos[lista->quantidade] = pessoa;
+    //Incrementa quantidade
+    lista->quantidade++;
+    //Retorna sucesso
     return 1;
 }

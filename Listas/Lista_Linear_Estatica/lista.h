@@ -37,7 +37,6 @@
 //Tipo de dado que a lista guarda
 typedef struct pessoa{
     int id;
-    char *nome;
 }Pessoa;
 
 //Estrutura da Lista Estatica
@@ -91,5 +90,32 @@ int lista_tamanho(Lista *lista);
  * @return int -1 se a lista não existir.
  */
 int lista_mostrar(Lista *lista);
+
+/**
+ * @brief Insere uma elemento no inicio da lista
+ * 
+ * @param lista ponterio para a lista
+ * @param pessoa elemento a ser inserido
+ * @return int 
+ */
+int lista_inserir_inicio(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Insere um elemento de forma ordenada na lista
+ * 
+ * @param lista ponteiro para o tipo lista
+ * @param pessoa elemento a ser inserido na lista
+ * @return int 
+ */
+int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Insere um elemento no fim da lista
+ * 
+ * @param lista ponteiro para o tipo lista
+ * @param pessoa elemento a ser inserido na lista
+ * @return int 
+ */
+int lista_inserir_fim(Lista *lista, Pessoa pessoa);
 
 #endif
