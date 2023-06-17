@@ -50,6 +50,9 @@ typedef struct lista{
 Lista* lista_criar();
 void lista_destruir(Lista *lista);
 //Informações da lista
-
+int lista_cheia(Lista *lista);
+int lista_vazia(Lista *lista);
+int lista_tamanho(Lista *lista);
+int lista_mostrar(Lista *lista);
 
 #endif
