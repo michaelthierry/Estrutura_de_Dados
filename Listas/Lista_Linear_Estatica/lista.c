@@ -30,3 +30,39 @@ void lista_destruir(Lista *lista){
     //Libera a memoria alocada para a lista
     free(lista);
 }
+
+int lista_cheia(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+    return (lista->quantidade == MAX);
+}
+
+int lista_vazia(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+    return (lista->quantidade == 0);
+}
+
+int lista_tamanho(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+    return lista->quantidade;
+}
+
+int lista_mostrar(Lista *lista){
+    if(lista == NULL){
+        return -1;
+    }
+    int iterador = 0;
+    printf(BOLD YELLOW "@> Lista\n");
+    while(iterador < lista->quantidade){
+        printf("[%i]\n", lista->elementos[iterador].id);
+        printf("[%s]\n", lista->elementos[iterador].nome);
+        printf("----\n");
+        iterador++;
+    }
+    return 1;
+}

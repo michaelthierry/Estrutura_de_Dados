@@ -56,6 +56,10 @@ int main(){
             switch(opcao){
                 case 0:
                     break;
+                case 7:
+                    lista_mostrar(lista);
+                    printf("@> Lista Mostrada\n"NONE);
+                    break;
                 default:
                     printf(BOLD RED "@> Opção Invalida!\n"NONE);
                     break;
