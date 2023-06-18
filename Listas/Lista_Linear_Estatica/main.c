@@ -45,8 +45,8 @@ int main(){
                    "|[5] Remover do meio (por valor)           |\n"
                    "|[6] Remover do fim da lista               |\n"
                    "|[7] Mostrar lista                         |\n"
-                   "|[8] Consulta (por posição)                |\n"
-                   "|[9] Consulta (por valor)                  |\n"
+                   "|[8] Consultar (por indice)                |\n"
+                   "|[9] Consultar (por ID)                    |\n"
                    "|[0] Sair                                  |\n"
                    "+------------[Insira-sua-opção]------------+\n"
                    NONE);
@@ -62,6 +62,8 @@ int main(){
                     //Pegando informação
                     printf("@> Digite o ID:\n");
                     scanf("%i", &pessoa.id);
+                    printf("@> Digite o Nome:\n");
+                    scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_inicio(lista, pessoa);
                     //Verifica validação
@@ -75,6 +77,8 @@ int main(){
                     //Pegando informação
                     printf("@> Digite o ID:\n");
                     scanf("%i", &pessoa.id);
+                    printf("@> Digite o Nome:\n");
+                    scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_ordenado(lista, pessoa);
                     //Verifica validação
@@ -88,6 +92,8 @@ int main(){
                     //Pegando informação
                     printf("@> Digite o ID:\n");
                     scanf("%i", &pessoa.id);
+                    printf("@> Digite o Nome:\n");
+                    scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_fim(lista, pessoa);
                     //Verifica validação

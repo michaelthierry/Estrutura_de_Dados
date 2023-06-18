@@ -67,13 +67,15 @@ int lista_mostrar(Lista *lista){
     //Mostra na tela os elementos
     int iterador = 0;
     printf(BOLD YELLOW "@> Lista\n");
+    printf("-----------\n");
     while(iterador < lista->quantidade){
         printf(
-            "-----------\n"
-            GREEN"[%i]"YELLOW"|ID:[%i]\n"
+            GREEN"[%i]"YELLOW"|ID:[%i]\n   |Nome:[%s]\n"
             "-----------\n",
             iterador+1,
-            lista->elementos[iterador].id);
+            lista->elementos[iterador].id,
+            lista->elementos[iterador].nome
+        );
         iterador++;
     }
     //Retorna 1
