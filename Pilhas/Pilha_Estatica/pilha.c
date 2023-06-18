@@ -106,3 +106,38 @@ int pilha_remover(Pilha *pilha){
     //Retorna sucesso;
     return 1;
 }
+
+int pilha_buscar_elemento(Pilha *pilha, int id, Pessoa *pessoa){
+    //Verifica se a pilha existe
+    if(pilha == NULL){
+        return -1;
+    }
+    //Tenta encontrar o elemento
+    int indice = 0;
+    while((indice < pilha->quantidade) && (pilha->elementos[indice].id != id)){
+        indice++;
+    }
+    //Verifica se encontrou
+    if(indice == pilha->quantidade){
+        return -1;
+    }
+    //Se encontrou
+    *pessoa = pilha->elementos[indice];
+    //Retorna sucesso
+    return 1;
+}
+
+int pilha_buscar_posicao(Pilha *pilha, int posicao, Pessoa *pessoa){
+    //Verifica se a fila existe
+    if(pilha == NULL){
+        return -1;
+    }
+    //Verifica se a busca é possivel
+    if(posicao <= 0 || posicao > pilha->quantidade){
+        return -1;
+    }
+    //Recebe o elemento diretamente
+    *pessoa = pilha->elementos[posicao - 1];
+    //Retorna sucesso
+    return 1;
+}

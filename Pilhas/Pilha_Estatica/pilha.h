@@ -91,4 +91,24 @@ int pilha_inserir(Pilha *pilha, Pessoa pessoa);
  */
 int pilha_remover(Pilha *pilha);
 
+/**
+ * @brief Busca um elemento na pilha pelo id
+ * 
+ * @param pilha referencia para a pilha
+ * @param id identificador do elemento
+ * @param pessoa referencia que recebe o elemento
+ * @return int 
+ */
+int pilha_buscar_elemento(Pilha *pilha, int id, Pessoa *pessoa);
+
+/**
+ * @brief Encontra um elemento na pilha pela posicão, se houver
+ * 
+ * @param pilha referencia para pilha
+ * @param posicao indice onde se encontra o elemento
+ * @param pessoa referencia que recebe o elemento do indice
+ * @return int 
+ */
+int pilha_buscar_posicao(Pilha *pilha, int posicao, Pessoa *pessoa);
+
 #endif

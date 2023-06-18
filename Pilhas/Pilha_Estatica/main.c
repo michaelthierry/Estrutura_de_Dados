@@ -25,8 +25,8 @@ int main(){
     //Verifica se a lista foi criada
     if(pilha != NULL){
         printf(
-            "@> Fila Criada\n"
-            "@> Tipo: Fila Estatica\n"
+            "@> Pila Criada\n"
+            "@> Tipo: Pila Estatica\n"
             "@> Tamanho: %d\n", MAX);
         int opcao;
         do{
@@ -84,7 +84,7 @@ int main(){
                     printf("@> Digite aposição:\n");
                     scanf("%i", &indice);
                     //Chamando a função
-                    //valida = fila_buscar_posicao(fila, indice, &pessoa);
+                    valida = pilha_buscar_posicao(pilha, indice, &pessoa);
                     if(valida > 0){
                         printf("@> Suceso: Elemento encontrado\n");
                         printf("@> Elemento: |%d|\n", pessoa.id);
@@ -97,7 +97,7 @@ int main(){
                     printf("@> Digite o id:\n");
                     scanf("%i", &id);
                     //Chamando a função
-                    //valida = fila_buscar_elemento(fila, id, &pessoa);
+                    valida = pilha_buscar_elemento(pilha, id, &pessoa);
                     if(valida > 0){
                         printf("@> Suceso: Elemento encontrado\n");
                         printf("@> Elemento: |%d|\n", pessoa.id);
@@ -113,10 +113,10 @@ int main(){
         }while(opcao != 0);
 
     }else{
-        printf("@> Erro ao criar a fila\n");
+        printf("@> Erro ao criar a Pilha\n");
     }
     //Destruindo a fila
     pilha_destruir(pilha);
-    printf("@> Fila destruida\n");
+    printf("@> Pilha destruida\n");
     return 0;
 }
