@@ -14,11 +14,26 @@
 #include "fila.h"
 
 /*Programa Principal*/
-
 int main(){
+    //Criando variavel
     Fila *fila;
+    //Pessoa pessoa;
+    //Mensagem para usuario
+    printf("@> Criando fila\n");
+    //Tenta aloca memoria para a lista
     fila = fila_criar();
-    fila_destruir(fila);
+    //Verifica se a lista foi criada
+    if(fila != NULL){
+        printf(
+            "@> Fila Criada\n"
+            "@> Tipo: Fila Estatica\n"
+            "@> Tamanho: %d\n", MAX);
 
+    }else{
+        printf("@> Erro ao criar a fila\n");
+    }
+    //Destruindo a fila
+    fila_destruir(fila);
+    printf("@> Fila destruida\n");
     return 0;
 }

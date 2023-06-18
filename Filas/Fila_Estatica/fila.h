@@ -19,17 +19,60 @@
 //Tipo de dado que a lista guarda
 typedef struct pessoa{
     int id;
-    char *nome;
+    char nome[30];
 }Pessoa;
 
 //Estrutura da fila
 typedef struct fila{
-    int quantidade;
-    Pessoa elemento[MAX];
+    int fim, quantidade;
+    Pessoa elementos[MAX];
 }Fila;
 
-//Criando e destruindo a fila
+/**
+ * @brief Aloca memoria para a fila estatica
+ * 
+ * @return Fila* 
+ */
 Fila* fila_criar();
+
+/**
+ * @brief Desaloca memoria alocada para a fila
+ * 
+ * @param fila é a referencia para fila 
+ */
 void fila_destruir(Fila *fila);
+
+/**
+ * @brief Informa se a fila esta vazia
+ * 
+ * @param fila é uma referencia para a fila
+ * @return int 
+ */
+int fila_vazia(Fila *fila);
+
+/**
+ * @brief Informa se a fila cheia
+ * 
+ * @param fila é a referencia para fila
+ * @return int 
+ */
+int fila_cheia(Fila *fila);
+
+/**
+ * @brief Informa a quantidade de elemento da fila
+ * 
+ * @param fila é uma referencia para a fila
+ * @return int 
+ */
+int fila_tamanho(Fila *fila);
+
+/**
+ * @brief Mostra no console os elementos da fila
+ * 
+ * @param fila é a referencia para a fila
+ * @return int 
+ */
+int fila_mostrar(Fila *fila);
+
 
 #endif
