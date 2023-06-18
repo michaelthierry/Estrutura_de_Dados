@@ -55,6 +55,7 @@ int pilha_cheia(Pilha *pilha){
     }
     return 0;
 }
+
 int pilha_tamanho(Pilha *pilha){
     //Verifica se a pilha existe
     if(pilha == NULL){
@@ -63,6 +64,7 @@ int pilha_tamanho(Pilha *pilha){
     //Retorna a quantidade
     return pilha->quantidade;
 }
+
 int pilha_mostrar(Pilha *pilha){
     //Verifica se a pilha existe
     if(pilha == NULL){
@@ -78,5 +80,18 @@ int pilha_mostrar(Pilha *pilha){
         );
         iterador++;
     }
+    return 1;
+}
+
+int pilha_inserir(Pilha *pilha, Pessoa pessoa){
+    //Verifica se a pilha esta cheia
+    if(pilha_cheia(pilha)){
+        return -1;
+    }
+    //Adiciona um elemento no topo da pilha
+    pilha->elementos[pilha->quantidade] = pessoa;
+    //Incrementa quantidade
+    pilha->quantidade++;
+    //Retorna sucesso
     return 1;
 }

@@ -57,11 +57,12 @@ int main(){
                     printf("@> Digite o Nome:\n");
                     scanf("%s", pessoa.nome);
                     //Chama a insercão
-                    //valida = fila_inserir(fila, pessoa);
+                    valida = pilha_inserir(pilha, pessoa);
+                    //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Inserido no fim\n");
+                        printf("@> Sucesso: Inserido na Pilha\n");
                     }else{
-                        printf("@> Falha: Ao inserir no inicio\n");
+                        printf("@> Falha: Ao inserir na Pilha\n");
                     }
                     break;
                 case 2:

@@ -74,4 +74,14 @@ int pilha_tamanho(Pilha *pilha);
  */
 int pilha_mostrar(Pilha *pilha);
 
+/**
+ * @brief Insere um elemento no topo da pilha
+ * 
+ * @param pilha referencia para a pilha
+ * @param pessoa elemento a ser adicionado na pilha
+ * @return int 
+ */
+int pilha_inserir(Pilha *pilha, Pessoa pessoa);
+
+
 #endif
