@@ -83,5 +83,12 @@ int pilha_mostrar(Pilha *pilha);
  */
 int pilha_inserir(Pilha *pilha, Pessoa pessoa);
 
+/**
+ * @brief Remove o elemento do topo da pilha
+ * 
+ * @param pilha referencia para a pilha
+ * @return int 
+ */
+int pilha_remover(Pilha *pilha);
 
 #endif

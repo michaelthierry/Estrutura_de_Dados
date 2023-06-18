@@ -95,3 +95,14 @@ int pilha_inserir(Pilha *pilha, Pessoa pessoa){
     //Retorna sucesso
     return 1;
 }
+
+int pilha_remover(Pilha *pilha){
+    //Verifica se a pilha esta vazia
+    if(pilha_vazia(pilha)){
+        return -1;
+    }
+    //Remove elemento do topo da pilha
+    pilha->quantidade--;
+    //Retorna sucesso;
+    return 1;
+}

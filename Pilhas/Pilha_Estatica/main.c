@@ -67,17 +67,17 @@ int main(){
                     break;
                 case 2:
                     //Chama a remoção 
-                    //valida = fila_remover(fila);
+                    valida = pilha_remover(pilha);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Elemento removido do inico \n");
+                        printf("@> Sucesso: Elemento removido do topo \n");
                     }else{
                         printf("@> Falha: Ao remover elemento\n");
                     }
                     break;
                 case 3:
                     pilha_mostrar(pilha);
-                    printf("@> Fila mostrada\n");
+                    printf("@> Pilha mostrada\n");
                     break;
                 case 4:
                     //Pegando informaçao
