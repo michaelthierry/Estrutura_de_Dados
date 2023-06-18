@@ -24,7 +24,7 @@ typedef struct pessoa{
 
 //Estrutura da fila
 typedef struct fila{
-    int fim, quantidade;
+    int quantidade;
     Pessoa elementos[MAX];
 }Fila;
 
@@ -74,5 +74,13 @@ int fila_tamanho(Fila *fila);
  */
 int fila_mostrar(Fila *fila);
 
+/**
+ * @brief Insere um elemento no final da fila
+ * 
+ * @param fila é a referencia para a fila
+ * @param pessoa elemento a ser adicionado
+ * @return int 
+ */
+int fila_inserir(Fila *fila, Pessoa pessoa);
 
 #endif

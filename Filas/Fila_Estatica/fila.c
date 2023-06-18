@@ -21,7 +21,6 @@ Fila* fila_criar(){
     //Verifica se a fila é Nulla
     if(fila != NULL){
         //Inicializa os campos
-        fila->fim = -1;
         fila->quantidade = 0;
     }
     //Retorna a referencia
@@ -85,3 +84,15 @@ int fila_mostrar(Fila *fila){
     return 1;
 }
 
+int fila_inserir(Fila *fila, Pessoa pessoa){
+    //verifica se a fila esta cheia
+    if(fila_cheia(fila)){
+        return -1;
+    }
+    //Adiciona o elemento no ultima posiçao
+    fila->elementos[fila->quantidade] = pessoa;
+    //Incrementa quantidade
+    fila->quantidade++;
+    //Retorna sucesso
+    return 1;
+}
