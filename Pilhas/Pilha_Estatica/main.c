@@ -15,6 +15,16 @@
 #include "pilha.h"
 
 int main(){
+    //Criando varivel
+    Pilha *pilha;
+    //Mensagem para usuario
+    printf("@> Criando Pilha\n");
+    //Tenta aloca memoria para a pilha
+    pilha = pilha_criar();
+    //Verifica se a lista foi criada
+    //Destruindo a fila
+    pilha_destruir(pilha);
+    printf("@> Fila destruida\n");
 
     return 0;
 }

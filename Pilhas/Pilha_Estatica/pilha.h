@@ -28,5 +28,18 @@ typedef struct pilha{
     Pessoa elementos[MAX];
 }Pilha;
 
+/**
+ * @brief Aloca memoria para uma pilha
+ * 
+ * @return Pilha* 
+ */
+Pilha* pilha_criar();
+
+/**
+ * @brief Desaloca memoria alocada para uma pilha
+ * 
+ * @param pilha é a referencia para a pilha
+ */
+void pilha_destruir(Pilha *pilha);
 
 #endif

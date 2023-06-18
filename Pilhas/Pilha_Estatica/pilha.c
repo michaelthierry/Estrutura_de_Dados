@@ -14,3 +14,20 @@
 #include <stdlib.h>
 #include "pilha.h"
 
+Pilha* pilha_criar(){
+    //Ponteiro para a pilha
+    Pilha *pilha;
+    //Aloca memoria para a pilha
+    pilha = (Pilha*) malloc(sizeof(Pilha));
+    //Verfica se a pilha nao é nula
+    if(pilha != NULL){
+        pilha->quantidade = 0;
+    }
+    //Retona a referencia
+    return pilha;
+}
+
+void pilha_destruir(Pilha *pilha){
+    //Libera memoria alocada
+    free(pilha);
+}
