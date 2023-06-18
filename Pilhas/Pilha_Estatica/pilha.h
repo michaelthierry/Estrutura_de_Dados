@@ -42,4 +42,36 @@ Pilha* pilha_criar();
  */
 void pilha_destruir(Pilha *pilha);
 
+/**
+ * @brief Informa se a pilha esta vazia
+ * 
+ * @param pilha referencia pra pilha
+ * @return int 
+ */
+int pilha_vazia(Pilha *pilha);
+
+/**
+ * @brief Informa se a pilha esta cheia
+ * 
+ * @param pilha referencia para a pilha
+ * @return int 
+ */
+int pilha_cheia(Pilha *pilha);
+
+/**
+ * @brief Informa o tamanho da pilha
+ * 
+ * @param pilha referencia para a pilha
+ * @return int 
+ */
+int pilha_tamanho(Pilha *pilha);
+
+/**
+ * @brief Mostra os elementos da pilha
+ * 
+ * @param pilha referenccia para a pilha
+ * @return int 
+ */
+int pilha_mostrar(Pilha *pilha);
+
 #endif
