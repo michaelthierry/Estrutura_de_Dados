@@ -64,6 +64,16 @@ int main(){
                         printf("@> Falha: Ao inserir no inicio\n");
                     }
                     break;
+                case 2:
+                    //Chama a remoção 
+                    valida = fila_remover(fila);
+                    //Verifica validação
+                    if(valida > 0){
+                        printf("@> Sucesso: Elemento removido do inico \n");
+                    }else{
+                        printf("@> Falha: Ao remover elemento\n");
+                    }
+                    break;
                 case 3:
                     fila_mostrar(fila);
                     printf("@> Fila mostrada\n");

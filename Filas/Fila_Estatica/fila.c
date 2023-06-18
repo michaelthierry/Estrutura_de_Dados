@@ -96,3 +96,19 @@ int fila_inserir(Fila *fila, Pessoa pessoa){
     //Retorna sucesso
     return 1;
 }
+
+int fila_remover(Fila* fila){
+    //Verifica se fila esta vazia
+    if(fila_vazia(fila)){
+        return -1;
+    }
+    //Remove o primeiro elemento
+    int indice;
+    for(indice = 0; indice < fila->quantidade - 1; indice++){
+        fila->elementos[indice] = fila->elementos[indice + 1];
+    }
+    //Decrementa da quantidade
+    fila->quantidade--;
+    //Retorna sucesso
+    return 1;
+}

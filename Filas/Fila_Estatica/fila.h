@@ -83,4 +83,12 @@ int fila_mostrar(Fila *fila);
  */
 int fila_inserir(Fila *fila, Pessoa pessoa);
 
+/**
+ * @brief Remove o primeiro elemnto da fila
+ * 
+ * @param fila é referencia para a fila
+ * @return int 
+ */
+int fila_remover(Fila* fila);
+
 #endif
