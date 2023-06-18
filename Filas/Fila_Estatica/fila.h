@@ -89,6 +89,26 @@ int fila_inserir(Fila *fila, Pessoa pessoa);
  * @param fila é referencia para a fila
  * @return int 
  */
-int fila_remover(Fila* fila);
+int fila_remover(Fila *fila);
+
+/**
+ * @brief Busca por um elemento na fila
+ * 
+ * @param fila é a referecia para a fila
+ * @param id é o identificador do elemento
+ * @param pessoa referencia que recebe o elemento encontrado
+ * @return int 
+ */
+int fila_buscar_elemento(Fila *fila, int id, Pessoa *pessoa);
+
+/**
+ * @brief Busca por um elemento de uma determinada posicao
+ * 
+ * @param fila é a referencia para fila
+ * @param posicao é o indice da fila onde esta o elemento
+ * @param pessoa referencia que recebe o elemento do indice
+ * @return int 
+ */
+int fila_buscar_posicao(Fila *fila, int posicao, Pessoa *pessoa);
 
 #endif

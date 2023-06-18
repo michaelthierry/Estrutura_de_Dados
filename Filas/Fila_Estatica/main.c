@@ -47,7 +47,7 @@ int main(){
             scanf("%i", &opcao);
             //Avaliando a opção
             switch(opcao){
-                int valida;
+                int valida, indice, id;
                 case 0:
                     break;
                 case 1:
@@ -77,6 +77,32 @@ int main(){
                 case 3:
                     fila_mostrar(fila);
                     printf("@> Fila mostrada\n");
+                    break;
+                case 4:
+                    //Pegando informaçao
+                    printf("@> Digite aposição:\n");
+                    scanf("%i", &indice);
+                    //Chamando a função
+                    valida = fila_buscar_posicao(fila, indice, &pessoa);
+                    if(valida > 0){
+                        printf("@> Suceso: Elemento encontrado\n");
+                        printf("@> Elemento: |%d|\n", pessoa.id);
+                    }else{
+                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                    }
+                    break;
+                case 5:
+                    //Pegando informaçao
+                    printf("@> Digite o id:\n");
+                    scanf("%i", &id);
+                    //Chamando a função
+                    valida = fila_buscar_elemento(fila, id, &pessoa);
+                    if(valida > 0){
+                        printf("@> Suceso: Elemento encontrado\n");
+                        printf("@> Elemento: |%d|\n", pessoa.id);
+                    }else{
+                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                    }
                     break;
                 default:
                     printf("@> Opção Invalida!\n");

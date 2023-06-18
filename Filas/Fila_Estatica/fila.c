@@ -112,3 +112,38 @@ int fila_remover(Fila* fila){
     //Retorna sucesso
     return 1;
 }
+
+int fila_buscar_elemento(Fila *fila, int id, Pessoa *pessoa){
+    //Verifica se a fila existe
+    if(fila == NULL){
+        return -1;
+    }
+    //Tenta encontrar o elemento
+    int indice = 0;
+    while((indice < fila->quantidade) && (fila->elementos[indice].id != id)){
+        indice++;
+    }
+    //Verifica se encontrou
+    if(indice == fila->quantidade){
+        return -1;
+    }
+    //Se encontrou
+    *pessoa = fila->elementos[indice];
+    //Retorna sucesso
+    return 1;
+}
+
+int fila_buscar_posicao(Fila *fila, int posicao, Pessoa *pessoa){
+    //Verifica se a fila existe
+    if(fila == NULL){
+        return -1;
+    }
+    //Verifica se a busca é possivel
+    if(posicao <= 0 || posicao > fila->quantidade){
+        return -1;
+    }
+    //Recebe o elemento diretamente
+    *pessoa = fila->elementos[posicao - 1];
+    //Retorna sucesso
+    return 1;
+}
