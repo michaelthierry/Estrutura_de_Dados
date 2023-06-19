@@ -19,19 +19,19 @@ int main(){
     Pilha *pilha;
     Pessoa pessoa;
     //Mensagem para usuario
-    printf("@> Criando Pilha\n");
+    printf(BOLD GREEN"@> Criando Pilha\n");
     //Tenta aloca memoria para a pilha
     pilha = pilha_criar();
     //Verifica se a lista foi criada
     if(pilha != NULL){
-        printf(
-            "@> Pila Criada\n"
-            "@> Tipo: Pila Estatica\n"
-            "@> Tamanho: %d\n", MAX);
+        printf(BOLD YELLOW
+            "@> Pilha Criada\n"
+            "@> Tipo: Pilha Estatica\n"
+            "@> Tamanho Máximo: %d elementos\n", MAX);
         int opcao;
         do{
             //Mostrando as opções 
-            printf(
+            printf(BOLD GREEN
                    "+------------------------------------------+\n"
                    "|               OPERACOES                  |\n"
                    "+------------------------------------------+\n"
@@ -42,7 +42,7 @@ int main(){
                    "|[5] Consultar (por ID)                    |\n"
                    "|[0] Sair                                  |\n"
                    "+------------[Insira-sua-opção]------------+\n"
-                );
+                NONE);
             //lendo do usuario
             scanf("%i", &opcao);
             //Avaliando a opção
@@ -52,17 +52,17 @@ int main(){
                     break;
                 case 1:
                     //Pegando informação
-                    printf("@> Digite o ID:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &pessoa.id);
-                    printf("@> Digite o Nome:\n");
+                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
                     scanf("%s", pessoa.nome);
                     //Chama a insercão
                     valida = pilha_inserir(pilha, pessoa);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Inserido na Pilha\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Inserido no topo da Pilha\n");
                     }else{
-                        printf("@> Falha: Ao inserir na Pilha\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao inserir no topo da Pilha\n");
                     }
                     break;
                 case 2:
@@ -70,39 +70,39 @@ int main(){
                     valida = pilha_remover(pilha);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Elemento removido do topo \n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Removido do topo da pilha\n");
                     }else{
-                        printf("@> Falha: Ao remover elemento\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao remover do topo da pilha\n");
                     }
                     break;
                 case 3:
                     pilha_mostrar(pilha);
-                    printf("@> Pilha mostrada\n");
+                    printf(BOLD YELLOW"@> Pilha mostrada\n"NONE);
                     break;
                 case 4:
                     //Pegando informaçao
-                    printf("@> Digite aposição:\n");
+                    printf(BOLD CYAN"@> Digite a posição:\n"NONE);
                     scanf("%i", &indice);
                     //Chamando a função
                     valida = pilha_buscar_posicao(pilha, indice, &pessoa);
                     if(valida > 0){
-                        printf("@> Suceso: Elemento encontrado\n");
-                        printf("@> Elemento: |%d|\n", pessoa.id);
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Elemento encontrado\n");
+                        printf(BOLD YELLOW"@> Elemento:\nID:[%d]\nNome:[%s]\n"NONE, pessoa.id, pessoa.nome);
                     }else{
-                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                        printf(BOLD RED"@> Falha:"NONE" Elemento não pode ser encontrado\n");
                     }
                     break;
                 case 5:
                     //Pegando informaçao
-                    printf("@> Digite o id:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &id);
                     //Chamando a função
                     valida = pilha_buscar_elemento(pilha, id, &pessoa);
                     if(valida > 0){
-                        printf("@> Suceso: Elemento encontrado\n");
-                        printf("@> Elemento: |%d|\n", pessoa.id);
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Elemento encontrado\n");
+                        printf(BOLD YELLOW"@> Elemento:\nID:[%d]\nNome:[%s]\n"NONE, pessoa.id, pessoa.nome);
                     }else{
-                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                        printf(BOLD RED"@> Falha:"NONE" Elemento não pode ser encontrado\n");
                     }
                     break;
                 default:
@@ -113,10 +113,10 @@ int main(){
         }while(opcao != 0);
 
     }else{
-        printf("@> Erro ao criar a Pilha\n");
+        printf(BOLD RED"@> Erro ao criar a Pilha\n"NONE);
     }
     //Destruindo a fila
     pilha_destruir(pilha);
-    printf("@> Pilha destruida\n");
+    printf(BOLD GREEN"@> Pilha destruida\n"NONE);
     return 0;
 }

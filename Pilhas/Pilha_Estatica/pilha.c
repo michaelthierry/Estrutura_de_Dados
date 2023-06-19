@@ -72,14 +72,20 @@ int pilha_mostrar(Pilha *pilha){
     }
     //Mostra a pilha
     int iterador = 0;
-    printf("@> Pilha\n");
+    printf(BOLD YELLOW"@> Pilha\n"NONE);
     while(iterador < pilha->quantidade){
-        printf("[%i]|ID:[%i]\n", 
+        printf(BOLD YELLOW
+            "+------------------------------------------+\n"
+            "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
+            "|    |Nome:[%s]                             \n"
+            "+------------------------------------------+\n"NONE,
             iterador+1,
-            pilha->elementos[iterador].id
+            pilha->elementos[iterador].id,
+            pilha->elementos[iterador].nome
         );
         iterador++;
     }
+    //Retorna sucesso
     return 1;
 }
 
