@@ -45,3 +45,54 @@ void lista_destruir(Lista *lista){
         free(lista);
     }
 }
+
+int lista_cheia(Lista *lista){
+    return 0;
+}
+
+int lista_vazia(Lista *lista){
+    //se nao existir
+    if(lista == NULL){
+        return -1;
+    }
+    //verifica se esta vazia
+    if(lista->inicio == NULL){
+        return 1;
+    }
+    return 0;
+}
+
+int lista_tamanho(Lista *lista){
+    //Se nao existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Conta os elementos
+    Elemento *auxiliar;
+    auxiliar = lista->inicio;
+    int contador = 0;
+    while(auxiliar != NULL){
+        contador++;
+        auxiliar = auxiliar->proximo;
+    }
+    //Retorna a quantidade
+    return contador;
+}
+
+int lista_mostrar(Lista *lista){
+    //se nao existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Cria um elemento auxiliar
+    Elemento *auxiliar;
+    auxiliar = lista->inicio;
+    printf("@> Lista\n");
+    //Percorre a lista
+    while(auxiliar != NULL){
+        printf("ID:[%i]\n", auxiliar->pessoa.id);
+        auxiliar = auxiliar->proximo;
+    }
+    //retorna sucesso
+    return 1;
+}

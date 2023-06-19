@@ -47,5 +47,36 @@ Lista* lista_criar();
  */
 void lista_destruir(Lista *lista);
 
+/**
+ * @brief Informa se a lista esta cheia (nunca vai estar)
+ * a nao ser que falte memoria
+ * @param lista referencia para a lista
+ * @return int 
+ */
+int lista_cheia(Lista *lista);
+
+/**
+ * @brief Informa se a lista esta vazia
+ * 
+ * @param lista referencia para a lista
+ * @return int 
+ */
+int lista_vazia(Lista *lista);
+
+/**
+ * @brief Informa quantos elemento tem na lista
+ * 
+ * @param lista referencia para lista
+ * @return int 
+ */
+int lista_tamanho(Lista *lista);
+
+/**
+ * @brief Mostra todos os elementos da lista
+ * 
+ * @param lista referencia para a lista
+ * @return int 
+ */
+int lista_mostrar(Lista *lista);
 
 #endif
