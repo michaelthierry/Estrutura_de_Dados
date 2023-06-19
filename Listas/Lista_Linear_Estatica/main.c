@@ -29,7 +29,7 @@ int main(){
         printf(BOLD YELLOW 
             "@> Lista Criada\n"
             "@> Tipo: Lista Linear Estatica\n"
-            "@> Tamanho: %d\n", MAX);
+            "@> Tamanho Maximo: %d elementos\n", MAX);
         //Variavel de opçao
         int opcao;
         do{
@@ -39,10 +39,10 @@ int main(){
                    "|               OPERACOES                  |\n"
                    "+------------------------------------------+\n"
                    "|[1] Inserir no inicio da lista            |\n"
-                   "|[2] Inserir no meio da lista (ordenado)   |\n"
+                   "|[2] Inserir em ordem na lista (por ID)    |\n"
                    "|[3] Inserir no fim da lista               |\n"
                    "|[4] Remover do inicio da lista            |\n"
-                   "|[5] Remover do meio (por valor)           |\n"
+                   "|[5] Remover do meio (por ID)              |\n"
                    "|[6] Remover do fim da lista               |\n"
                    "|[7] Mostrar lista                         |\n"
                    "|[8] Consultar (por indice)                |\n"
@@ -60,47 +60,47 @@ int main(){
                     break;
                 case 1:
                     //Pegando informação
-                    printf("@> Digite o ID:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &pessoa.id);
-                    printf("@> Digite o Nome:\n");
+                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
                     scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_inicio(lista, pessoa);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Inserido no Inicio\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Inserido no inicio da lista\n");
                     }else{
-                        printf("@> Falha: Ao inserir no inicio\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao inserir no inicio da lista\n");
                     }
                     break;
                 case 2:
                     //Pegando informação
-                    printf("@> Digite o ID:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &pessoa.id);
-                    printf("@> Digite o Nome:\n");
+                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
                     scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_ordenado(lista, pessoa);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Inserido no Meio\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Inserido em ordem na lista\n");
                     }else{
-                        printf("@> Falha: Ao inserir no Meio\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao inserir em ordem na lista\n");
                     }
                     break;
                 case 3:
                     //Pegando informação
-                    printf("@> Digite o ID:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &pessoa.id);
-                    printf("@> Digite o Nome:\n");
+                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
                     scanf("%s", pessoa.nome);
                     //Chama a inserção no inicio
                     valida = lista_inserir_fim(lista, pessoa);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Inserido no Fim\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Inserido no fim da lista\n");
                     }else{
-                        printf("@> Falha: Ao inserir no Fim\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao inserir no fim da lista\n");
                     }
                     break;
                 case 4:
@@ -108,22 +108,22 @@ int main(){
                     valida = lista_remover_inicio(lista);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Removido no Inicio\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Removido do inicio da lista\n");
                     }else{
-                        printf("@> Falha: Ao remover no inicio\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao remover do inicio da lista\n");
                     }
                     break;
                 case 5:
                     //Pegando as informações
-                    printf("@> Digite o ID a ser removido:\n");
+                    printf(BOLD CYAN"@> Digite o ID a ser removido:\n"NONE);
                     scanf("%i", &pessoa.id);
                     //Chama a remoção do inicio
                     valida = lista_remover_elemento(lista, pessoa);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Elemento removido\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Elemento removido da lista\n");
                     }else{
-                        printf("@> Falha: Ao remover elemento\n");
+                        printf(BOLD RED"@> Falha:"NONE" Ao remover elemento da lista\n");
                     }
                     break;
                 case 6:
@@ -131,39 +131,39 @@ int main(){
                     valida = lista_remover_fim(lista);
                     //Verifica validação
                     if(valida > 0){
-                        printf("@> Sucesso: Removido do fim\n");
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Removido do fim da lista\n");
                     }else{
-                        printf("@> Falha: Ao remover do fim\n");
+                        printf(BOLD RED"@> Falha: Ao remover do fim da lista\n");
                     }
                     break;
                 case 7:
                     lista_mostrar(lista);
-                    printf("@> Lista Mostrada\n"NONE);
+                    printf(BOLD YELLOW"@> Lista Mostrada\n"NONE);
                     break;
                 case 8:
                     //Pegando informaçao
-                    printf("@> Digite aposição:\n");
+                    printf(BOLD CYAN"@> Digite aposição:\n"NONE);
                     scanf("%i", &indice);
                     //Chamando a função
                     valida = lista_buscar_posicao(lista, indice, &pessoa);
                     if(valida > 0){
-                        printf("@> Suceso: Elemento encontrado\n");
-                        printf("@> Elemento: |%d|\n", pessoa.id);
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Elemento encontrado\n");
+                        printf(BOLD YELLOW"@> Elemento:\nID:[%d]\nNome:[%s]\n"NONE, pessoa.id, pessoa.nome);
                     }else{
-                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                        printf(BOLD RED"@> Falha:"NONE" Elemento não pode ser encontrado\n");
                     }
                     break;
                 case 9:
                     //Pegando informaçao
-                    printf("@> Digite o id:\n");
+                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &id);
                     //Chamando a função
                     valida = lista_buscar_elemento(lista, id, &pessoa);
                     if(valida > 0){
-                        printf("@> Suceso: Elemento encontrado\n");
-                        printf("@> Elemento: |%d|\n", pessoa.id);
+                        printf(BOLD GREEN"@> Sucesso:"NONE" Elemento encontrado\n");
+                        printf(BOLD YELLOW"@> Elemento:\nID:[%d]\nNome:[%s]\n"NONE, pessoa.id, pessoa.nome);
                     }else{
-                        printf("@> Falha: Elemento não pode ser encontrado\n");
+                        printf(BOLD RED"@> Falha:"NONE" Elemento não pode ser encontrado\n");
                     }
                     break;
                 default:
@@ -174,7 +174,7 @@ int main(){
         }while(opcao != 0);
 
     }else{
-        printf(RED "@> Erro ao criar a lista\n");
+        printf(RED "@> Erro ao criar a lista\n"NONE);
     }
     
     //Destruir a lista

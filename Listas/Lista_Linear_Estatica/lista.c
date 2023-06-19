@@ -66,12 +66,13 @@ int lista_mostrar(Lista *lista){
     }
     //Mostra na tela os elementos
     int iterador = 0;
-    printf(BOLD YELLOW "@> Lista\n");
-    printf("-----------\n");
+    printf(BOLD YELLOW "@> Lista\n"NONE);
     while(iterador < lista->quantidade){
-        printf(
-            GREEN"[%i]"YELLOW"|ID:[%i]\n   |Nome:[%s]\n"
-            "-----------\n",
+        printf(BOLD YELLOW
+            "+------------------------------------------+\n"
+            "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
+            "|    |Nome:[%s]                             \n"
+            "+------------------------------------------+\n"NONE,
             iterador+1,
             lista->elementos[iterador].id,
             lista->elementos[iterador].nome
