@@ -72,11 +72,16 @@ int fila_mostrar(Fila *fila){
     }
     //Mostra na tela os elementos
     int iterador = 0;
-    printf("@> Fila\n");
+    printf(BOLD YELLOW"@> Fila\n"NONE);
     while(iterador < fila->quantidade){
-        printf("[%i]|ID:[%i]\n",
+        printf(BOLD YELLOW
+            "+------------------------------------------+\n"
+            "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
+            "|    |Nome:[%s]                             \n"
+            "+------------------------------------------+\n"NONE,
             iterador+1,
-            fila->elementos[iterador].id
+            fila->elementos[iterador].id,
+            fila->elementos[iterador].nome
         );
         iterador++;
     }

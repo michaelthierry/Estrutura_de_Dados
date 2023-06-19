@@ -142,7 +142,7 @@ int main(){
                     break;
                 case 8:
                     //Pegando informaçao
-                    printf(BOLD CYAN"@> Digite aposição:\n"NONE);
+                    printf(BOLD CYAN"@> Digite a posição:\n"NONE);
                     scanf("%i", &indice);
                     //Chamando a função
                     valida = lista_buscar_posicao(lista, indice, &pessoa);
@@ -174,7 +174,7 @@ int main(){
         }while(opcao != 0);
 
     }else{
-        printf(RED "@> Erro ao criar a lista\n"NONE);
+        printf(BOLD RED "@> Erro ao criar a lista\n"NONE);
     }
     
     //Destruir a lista
