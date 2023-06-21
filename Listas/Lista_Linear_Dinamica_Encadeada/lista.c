@@ -87,11 +87,21 @@ int lista_mostrar(Lista *lista){
     //Cria um elemento auxiliar
     Elemento *auxiliar;
     auxiliar = lista->inicio;
-    printf("@> Lista\n");
+    printf(BOLD YELLOW"@> Lista\n"NONE);
     //Percorre a lista
+    int contador = 0;
     while(auxiliar != NULL){
-        printf("ID:[%i]\n", auxiliar->pessoa.id);
+        printf(BOLD YELLOW
+            "+------------------------------------------+\n"
+            "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
+            "|    |Nome:[%s]                             \n"
+            "+------------------------------------------+\n"NONE,
+            contador+1,
+            auxiliar->pessoa.id,
+            auxiliar->pessoa.nome
+        );
         auxiliar = auxiliar->proximo;
+        contador++;
     }
     //retorna sucesso
     return 1;
@@ -150,9 +160,9 @@ int lista_inserir_ordenado(Lista *lista, Pessoa pessoa){
             novo->proximo = anterior->proximo;
             anterior->proximo = novo;
         }
-        //Sucesso
-        return 1;
     }
+    //Sucesso
+    return 1;
 }
 
 int lista_inserir_fim(Lista *lista, Pessoa pessoa){
@@ -186,3 +196,134 @@ int lista_inserir_fim(Lista *lista, Pessoa pessoa){
     return 1;
 }
 
+int lista_remover_inicio(Lista *lista){
+    //se exitir
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria um elemento
+    Elemento *auxiliar;
+    //Remove do inicio
+    auxiliar = lista->inicio;
+    lista->inicio = auxiliar->proximo;
+    //Libera o auxiliar
+    free(auxiliar);
+    //sucesso
+    return 1;
+}
+
+int lista_remover_elemento(Lista *lista, Pessoa pessoa){
+    //Se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Verifica se esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria auxiliares
+    Elemento *anterior, *atual;
+    atual = lista->inicio;
+    //Encontra o elemento
+    while((atual != NULL) && (atual->pessoa.id != pessoa.id)){
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    //Verifica se encontrou
+    if(atual == NULL){
+        return 0;
+    }
+    //Remove o elemento
+    Elemento *remover;
+    remover = atual;
+    anterior->proximo = remover->proximo;
+    //libera o elemento
+    free(remover);
+    //status ok
+    return 1;
+}
+
+int lista_remover_fim(Lista *lista){
+    //Se a lista existe
+    if(lista == NULL){
+        return -1;
+    }
+    //Se a lista esta vazia
+    if(lista_vazia(lista)){
+        return -1;
+    }
+    //Cria auxiliares
+    Elemento *anterior, *atual;
+    atual = lista->inicio;
+    //Percorre a lista
+    while(atual->proximo != NULL){
+        anterior = atual;
+        atual = atual->proximo;
+    }
+    //Se estiver removendo o primeiro
+    if(atual == lista->inicio){
+        lista->inicio = atual->proximo;
+    }else{
+        anterior->proximo = atual->proximo;
+    }
+    //libera o atual
+    free(atual);
+    //status ok
+    return 1;
+}
+
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa){
+    //se existir
+    if(lista == NULL){
+        return -1;
+    }
+    //Se nao estiver vazia
+    if(lista_vazia(lista)){
+        return 0;
+    }
+    //Criando um ponteiro
+    Elemento *auxiliar = lista->inicio;
+    //Procura pelo elemento
+    while((auxiliar != NULL) && (auxiliar->pessoa.id!= id)){
+        auxiliar = auxiliar->proximo;
+    }
+    //Confere se encontrou
+    if(auxiliar == NULL){
+        return 0;
+    }
+    *pessoa = auxiliar->pessoa;
+    //Status ok
+    return 1;
+}
+
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa){
+    //Se a lista existir
+    if(lista == NULL){
+        return -1;
+    }
+    //Se a lista não estiver vazia
+    if(lista_vazia(lista) || posicao <= 0){
+        return 0;
+    }
+    //Criar auxiliar
+    Elemento *auxiliar;
+    int indice = 1;
+    auxiliar = lista->inicio;
+    //faz a busca
+    while((auxiliar != NULL) && (indice < posicao)){
+        auxiliar = auxiliar->proximo;
+        indice++;
+    }
+    //Se não encontrou
+    if(auxiliar == NULL){
+        return 0;
+    }
+    //Se sim 
+    *pessoa = auxiliar->pessoa;
+    //Status
+    return 1;
+}

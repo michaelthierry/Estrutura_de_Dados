@@ -13,6 +13,24 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+//Efeitos
+#define NONE        "\033[0m"
+#define BOLD        "\033[1m"
+#define HALFBRIGHT  "\033[2m"
+#define UNDERSCORE  "\033[4m"
+#define BLINK       "\033[5m"
+#define REVERSE     "\033[7m"
+
+//Cores
+#define BLACK     "\033[30m"
+#define RED       "\033[31m"
+#define GREEN     "\033[32m"
+#define YELLOW    "\033[33m"
+#define BLUE      "\033[34m"
+#define MAGENTA   "\033[35m"
+#define CYAN      "\033[36m"
+#define GRAY      "\033[37m"
+
 //Tipo de dado que a lista guarda
 typedef struct pessoa{
     int id;
@@ -105,5 +123,51 @@ int lista_inserir_ordenado(Lista *lista, Pessoa pessoa);
  * @return int 
  */
 int lista_inserir_fim(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Remove o primeiro elemento da lista
+ * 
+ * @param lista ponterio para a lista 
+ * @return int 
+ */
+int lista_remover_inicio(Lista *lista);
+
+/**
+ * @brief Procura um elemento na lista e o remove
+ * 
+ * @param lista ponteiro para a lista
+ * @param pessoa elemento a ser procurado
+ * @return int 
+ */
+int lista_remover_elemento(Lista *lista, Pessoa pessoa);
+
+/**
+ * @brief Remove o ultimo elemento da lista
+ * 
+ * @param lista ponteiro para a lista
+ * @return int 
+ */
+int lista_remover_fim(Lista *lista);
+
+/**
+ * @brief Busca um elemeto da lista e o atribui a referencia se existir
+ * 
+ * @param lista ponteiro para lista
+ * @param id identidicador do elemento
+ * @param pessoa referencia para atribuir o elemento
+ * @return int 
+ */
+int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa);
+
+/**
+ * @brief Busca por um elemento em uma determinada posicao da lista e o atribui a referencia se existir.
+ * 
+ * @param lista referencia para a lista
+ * @param posicao posição da lista para fazer a busca
+ * @param pessoa referencia para atribuir o elemento
+ * @return int 
+ */
+int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa);
+
 
 #endif
