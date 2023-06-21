@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Michael Thierry (michaelthierry86@gmail.com)
- * @brief 
+ * @brief Programa principal
  * @version 0.1
  * @date 2023-06-19
  * 
@@ -30,7 +30,7 @@ int main(){
         printf(BOLD YELLOW 
             "@> Lista Criada\n"
             "@> Tipo: Lista Linear Estatica\n"
-            "@> Tamanho Maximo: %d elementos\n",lista_tamanho(lista));
+            "@> Tamanho Maximo: Dinâmico\n");
         //Variavel de opçao
         int opcao;
         do{
@@ -63,8 +63,10 @@ int main(){
                     //Pegando informação
                     printf(BOLD CYAN"@> Digite o ID:\n"NONE);
                     scanf("%i", &pessoa.id);
+                    //while(getchar()!= '\n');
                     printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
                     scanf("%s", pessoa.nome);
+                    //fgets(pessoa.nome, 29, stdin);
                     //Chama a inserção no inicio
                     valida = lista_inserir_inicio(lista, pessoa);
                     //Verifica validação

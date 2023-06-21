@@ -94,7 +94,7 @@ int lista_mostrar(Lista *lista){
         printf(BOLD YELLOW
             "+------------------------------------------+\n"
             "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
-            "|    |Nome:[%s]                             \n"
+            "|    |Nome:%s                              \n"
             "+------------------------------------------+\n"NONE,
             contador+1,
             auxiliar->pessoa.id,
