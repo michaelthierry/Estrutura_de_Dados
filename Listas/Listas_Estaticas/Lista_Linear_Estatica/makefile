@@ -13,6 +13,7 @@ C_FLAGS = \
 OBJ = \
 	main.o \
 	lista.o \
+	console.c \
 
 # Regra para gerar executavel
 Lista: $(OBJ)

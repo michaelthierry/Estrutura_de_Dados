@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
+#include "constantes.h"
 
 Lista* lista_criar(){
     //Declara ponteiro do tipo lista
@@ -71,7 +72,7 @@ int lista_mostrar(Lista *lista){
         printf(BOLD YELLOW
             "+------------------------------------------+\n"
             "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
-            "|    |Nome:[%s]                             \n"
+            "|    |Nome:%s"
             "+------------------------------------------+\n"NONE,
             iterador+1,
             lista->elementos[iterador].id,
@@ -220,3 +221,5 @@ int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa){
     //Retorna sucesso
     return 1;
 }
+
+
