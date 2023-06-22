@@ -44,27 +44,97 @@ typedef struct elemento{
     struct elemento *proximo;
 }Elemento;
 
-//Estrutura da lista
+//Estrutura da fila
 typedef struct fila{
-    //Referencia para o primeiro elemento da lista
+    //Referencia para o primeiro elemento da fila;
     Elemento *inicio;
 }Fila;
 
+/**
+ * @brief Aloca memoria para a fila
+ * 
+ * @return Fila* 
+ */
 Fila *fila_criar();
-void Fila_destruir(Fila *fila);
 
+/**
+ * @brief libera a memoria alocada para a fila
+ * 
+ * @param fila 
+ */
+void fila_destruir(Fila *fila);
+
+/**
+ * @brief Informa se a fila esta cheia (nunca estara ate a memoria acabar)
+ * 
+ * @param fila 
+ * @return int 
+ */
 int fila_cheia(Fila *fila);
+
+/**
+ * @brief informa se a fila esta vazia
+ * 
+ * @param fila 
+ * @return int 
+ */
 int fila_vazia(Fila *fila);
+
+/**
+ * @brief Informa a quantidade de elementos na fila
+ * 
+ * @param fila 
+ * @return int 
+ */
 int fila_tamanho(Fila *fila);
 
+/**
+ * @brief Mostra para o usuario os elemento da fila
+ * 
+ * @param fila 
+ * @return int 
+ */
+int fila_mostrar(Fila *fila);
+
+/**
+ * @brief insere um elemento no inicio da fila se ela estiver vazia ou insere no fim se ja
+ * houver elementos
+ * @param fila referenicia para a fila
+ * @param pessoa elemento a ser inserido
+ * @return int 
+ */
 int fila_inserir(Fila *fila, Pessoa pessoa);
+
+/**
+ * @brief Remove um elemento do fim da fila
+ * 
+ * @param fila referencia para a fila
+ * @return int 
+ */
 int fila_remover(Fila *fila);
 
+/**
+ * @brief busca pro um elemento na fila
+ * 
+ * @param fila referencia para a fila
+ * @param id informação do elemento a ser buscado
+ * @param pessoa refrencia que recebera o elemento
+ * @return int 
+ */
 int fila_buscar_elemento(Fila *fila, int id, Pessoa *pessoa);
+
+/**
+ * @brief Busca um elemento na fila pela posicao
+ * 
+ * @param fila referencia para a fila
+ * @param posicao indice onde o elemento se encontra
+ * @param pessoa referencia que recebe o elemento
+ * @return int 
+ */
 int fila_buscar_posicao(Fila *fila, int posicao, Pessoa *pessoa);
 
 /**
- * @brief Cria um elemento pessoa e lendo do usuario.
+ * @brief Cria um elemento pessoa lendo do usuario.
  * 
  * @return Pessoa 
  */

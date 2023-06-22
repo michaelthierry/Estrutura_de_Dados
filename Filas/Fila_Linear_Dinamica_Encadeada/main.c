@@ -26,7 +26,7 @@ int main(){
     if(fila != NULL){
         printf(BOLD YELLOW
             "@> Fila Criada\n"
-            "@> Tipo: Fila Linear Estatica \n"
+            "@> Tipo: Fila Linear Dinamica Encadeada\n"
             "@> Tamanho: Dinamica\n");
         int opcao;
         do{

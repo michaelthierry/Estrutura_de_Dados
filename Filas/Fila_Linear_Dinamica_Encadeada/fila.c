@@ -15,8 +15,11 @@
 #include "fila.h"
 
 Fila* fila_criar(){
+    //Cria referencia para fila
     Fila *fila;
+    //Aloca memoria
     fila = (Fila*)malloc(sizeof(Fila));
+    //Verifica se alocou
     if(fila != NULL){
         fila->inicio = NULL;
     }
@@ -63,6 +66,34 @@ int fila_tamanho(Fila *fila){
     return contador;
 }
 
+int fila_mostrar(Fila *fila){
+    //Verifica se a fila existe
+    if(fila == NULL){
+        return -1;
+    }
+    //Cria um elemento auxiliar
+    Elemento *auxiliar;
+    auxiliar = fila->inicio;
+    printf(BOLD YELLOW"@> Fila\n"NONE);
+    //Percorre a fila
+    int contador = 0;
+    while(auxiliar != NULL){
+        printf(BOLD YELLOW
+            "+------------------------------------------+\n"
+            "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
+            "|    |Nome:%s                              \n"
+            "+------------------------------------------+\n"NONE,
+            contador+1,
+            auxiliar->pessoa.id,
+            auxiliar->pessoa.nome
+        );
+        auxiliar = auxiliar->proximo;
+        contador++;
+    }
+    //retorna sucesso
+    return 1;
+}
+
 int fila_inserir(Fila *fila, Pessoa pessoa){
     if(fila == NULL){
         return -1;
@@ -77,6 +108,7 @@ int fila_inserir(Fila *fila, Pessoa pessoa){
         fila->inicio = novo;
     }else{
         Elemento *auxiliar;
+        auxiliar = fila->inicio;
         while(auxiliar->proximo != NULL){
             auxiliar = auxiliar->proximo;
         }
@@ -92,18 +124,11 @@ int fila_remover(Fila *fila){
     if(fila_vazia(fila)){
         return -1;
     }
-    Elemento *anterior, *atual;
-    atual = fila->inicio;
-    while(atual->proximo != NULL){
-        anterior = atual;
-        atual = atual->proximo;
-    };
-    if(atual == fila->inicio){
-        fila->inicio = atual->proximo;
-    }else{
-        anterior->proximo = atual->proximo;
-    }
-    free(atual);
+    Elemento *auxiliar;
+    auxiliar = fila->inicio;
+    fila->inicio = auxiliar->proximo;
+    free(auxiliar);
+
     return 1;
 }
 
@@ -113,7 +138,7 @@ int fila_buscar_elemento(Fila *fila, int id, Pessoa *pessoa){
         return -1;
     }
     //Se nao estiver vazia
-    if(lista_vazia(fila)){
+    if(fila_vazia(fila)){
         return 0;
     }
     //Criando um ponteiro
@@ -137,7 +162,7 @@ int fila_buscar_posicao(Fila *fila, int posicao, Pessoa *pessoa){
         return -1;
     }
     //Se a fila não estiver vazia
-    if(lista_vazia(fila) || posicao <= 0){
+    if(fila_vazia(fila) || posicao <= 0){
         return 0;
     }
     //Criar auxiliar
