@@ -60,14 +60,9 @@ int main(){
                 case 0:
                     break;
                 case 1:
-                    //Pegando informação
-                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
-                    scanf("%i", &pessoa.id);
-                    //while(getchar()!= '\n');
-                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
-                    scanf("%s", pessoa.nome);
-                    //fgets(pessoa.nome, 29, stdin);
-                    //Chama a inserção no inicio
+                    //Pegando dados do usuario
+                    pessoa = entrada_dados();
+                    //tenta inserir no inicio
                     valida = lista_inserir_inicio(lista, pessoa);
                     //Verifica validação
                     if(valida > 0){
@@ -77,11 +72,8 @@ int main(){
                     }
                     break;
                 case 2:
-                    //Pegando informação
-                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
-                    scanf("%i", &pessoa.id);
-                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
-                    scanf("%s", pessoa.nome);
+                    //Pegando dados do usuario
+                    pessoa = entrada_dados(); 
                     //Chama a inserção no inicio
                     valida = lista_inserir_ordenado(lista, pessoa);
                     //Verifica validação
@@ -92,11 +84,8 @@ int main(){
                     }
                     break;
                 case 3:
-                    //Pegando informação
-                    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
-                    scanf("%i", &pessoa.id);
-                    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
-                    scanf("%s", pessoa.nome);
+                    //Pegando dados do usuario
+                    pessoa = entrada_dados(); 
                     //Chama a inserção no inicio
                     valida = lista_inserir_fim(lista, pessoa);
                     //Verifica validação

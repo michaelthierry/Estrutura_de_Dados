@@ -169,5 +169,11 @@ int lista_buscar_elemento(Lista *lista, int id, Pessoa *pessoa);
  */
 int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa);
 
+/**
+ * @brief Cria um elemento pessoa e lendo do usuario.
+ * 
+ * @return Pessoa 
+ */
+Pessoa entrada_dados();
 
 #endif

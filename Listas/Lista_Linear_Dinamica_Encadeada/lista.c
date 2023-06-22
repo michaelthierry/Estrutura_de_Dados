@@ -327,3 +327,18 @@ int lista_buscar_posicao(Lista *lista, int posicao, Pessoa *pessoa){
     //Status
     return 1;
 }
+
+Pessoa entrada_dados(){
+    Pessoa pessoa;
+    //Pegando informação
+    printf(BOLD CYAN"@> Digite o ID:\n"NONE);
+    scanf("%i", &pessoa.id);
+    //Removendo o \n
+    while(getchar()!= '\n');
+    printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
+    //scanf("%s", pessoa.nome);
+    //lendo nome pegando espaços em brancos ja que scanf nao faz.
+    fgets(pessoa.nome, sizeof(pessoa.nome), stdin);
+    //retorna os dados
+    return pessoa;
+}
