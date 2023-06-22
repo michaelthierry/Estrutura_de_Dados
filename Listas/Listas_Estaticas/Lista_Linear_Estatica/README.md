@@ -1,7 +1,7 @@
 # Lista Linear Estática
  Tipo de lista onde o sucessor de um elemento ocupa
  a posição física seguinte do mesmo.
- <img src="image/lista_linear_estatica.png"></img>
+ <img src="https://github.com/michaelthierry/Estrutura_de_Dados/blob/main/Listas/Listas_Estaticas/Lista_Linear_Estatica/image/lista_linear_estatica.png"></img>
 
 <table border="1">
     <tr>
