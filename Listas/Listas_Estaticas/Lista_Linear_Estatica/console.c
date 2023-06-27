@@ -58,9 +58,16 @@ Pessoa pega_dados(){
     //Removendo o \n
     while(getchar()!= '\n');
     printf(BOLD CYAN"@> Digite o Nome:\n"NONE);
-    //scanf("%s", pessoa.nome);
+    
     //lendo nome pegando espaços em brancos ja que scanf nao faz.
     fgets(pessoa.nome, sizeof(pessoa.nome), stdin);
+    
+    printf(BOLD CYAN"@> Digite a idade:\n"NONE);
+    scanf("%i", &pessoa.idade);
+
+    printf(BOLD CYAN"@> Digite o peso:\n"NONE);
+    scanf("%f", &pessoa.peso);
+
     printf(
         BOLD CYAN
         "+------------------------------------------+\n"

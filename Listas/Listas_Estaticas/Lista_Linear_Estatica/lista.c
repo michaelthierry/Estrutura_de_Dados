@@ -73,10 +73,14 @@ int lista_mostrar(Lista *lista){
             "+------------------------------------------+\n"
             "|"GREEN"[%02i]"YELLOW"|ID:[%i]              \n"            
             "|    |Nome:%s"
+            "|    |Idade:%i\n"
+            "|    |Peso:%.2f\n"
             "+------------------------------------------+\n"NONE,
             iterador+1,
             lista->elementos[iterador].id,
-            lista->elementos[iterador].nome
+            lista->elementos[iterador].nome,
+            lista->elementos[iterador].idade,
+            lista->elementos[iterador].peso
         );
         iterador++;
     }

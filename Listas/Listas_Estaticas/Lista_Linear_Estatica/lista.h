@@ -20,7 +20,9 @@
 //Tipo de dado que a lista guarda
 typedef struct pessoa{
     int id;
-    char nome[25];
+    char nome[30];
+    int idade;
+    float peso;
 }Pessoa;
 
 //Estrutura da Lista Estatica
