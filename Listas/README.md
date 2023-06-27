@@ -20,10 +20,14 @@ __Operações Básicas__
 - Acessar um elemento
 - Destruir uma lista
 
-<h2>Elementos utilizado</h2>
-<img src="image/Elemento.png"></img>
+<h2>Os dados utilizado</h2>
+Os dados que serão guardados em todas as estruturas esta a seguir
 
-Nossos elementos tem a seguinte estrutura
-- O elementos são do tipo Pessoa
+<img src="../image/pessoa.png"></img>
+
+Os dados guardados tem a seguinte estrutura
+- O elementos são uma estrutura tipo Pessoa
 - Tem um campo _ID_ (identificador único) que é um numero inteiro
 - Tem um campo _Nome_ que é uma string que armazena o nome da pessoa
+- Tem um campo _idade_ que é um numero interio
+- Tem um campo _peso_ que é to tipo float
