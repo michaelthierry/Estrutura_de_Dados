@@ -30,8 +30,10 @@
 #define CYAN      "\033[36m"
 #define GRAY      "\033[37m"
 
+//Mensagens
 #define SUCESSO  BOLD GREEN "@> SUCESSO: " NONE
 #define FALHA   BOLD RED "@> FALHA: " NONE
 
+//constandde de operação
 #define INSERIR 1
 #define REMOVER 2
